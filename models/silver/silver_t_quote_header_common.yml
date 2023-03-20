@@ -1,0 +1,96 @@
+version: 2
+
+models:
+  - name: silver_t_quote_header_common
+    docs:
+      show: true
+    config:
+        enabled: True
+        tags: cpq
+        schema: silver
+        catalog: diggibyte
+        alias: t_quote_header_common
+    columns:
+        - name: CurrencyCode
+          data_type: string
+          nullable: true
+        - name: DateCreated
+          data_type: string
+          nullable: true
+        - name: DateModified
+          data_type: string
+          nullable: true
+          tests:
+            - not_null
+        - name: DistributionChannel
+          data_type: string
+          nullable: true
+        - name: EffectiveDate
+          data_type: string
+          nullable: true
+        - name: ErrorMessage
+          data_type: string
+          nullable: true
+        - name: ExternalId
+          data_type: string
+          nullable: true
+        - name: ExternalSystemId
+          data_type: string
+          nullable: true
+        - name: IsPrimary
+          data_type: boolean
+          nullable: true
+          tests:
+            - not_null
+        - name: MarketCode
+          data_type: string
+          nullable: true
+        - name: MarketId
+          data_type: bigint
+          nullable: true
+        - name: OpportunityId
+          data_type: string
+          nullable: true
+        - name: OpportunityName
+          data_type: string
+          nullable: true
+        - name: Origin
+          data_type: string
+          nullable: true
+        - name: OwnerId
+          data_type: bigint
+          nullable: true
+        - name: PriceBookId
+          data_type: bigint
+          nullable: true
+        - name: QuoteId
+          data_type: bigint
+          nullable: true
+          tests:
+            - not_null
+        - name: QuoteNumber
+          data_type: string
+          nullable: true
+          tests:
+            - not_null
+        - name: QuoteTables
+          data_type: array
+          nullable: true
+          children:
+            - data_type: string
+        - name: RevisionNumber
+          data_type: string
+          nullable: true
+        - name: StatusId
+          data_type: bigint
+          nullable: true
+        - name: StatusName
+          data_type: string
+          nullable: true
+        - name: LOAD_DT
+          data_type: date
+          nullable: true
+        - name: EXECUTION_DT
+          data_type: date
+          nullable: true
+

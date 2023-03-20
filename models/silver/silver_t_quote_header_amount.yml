@@ -1,0 +1,96 @@
+version: 2
+
+models:
+  - name: silver_t_quote_header_amount
+    docs:
+      show: true
+    config:
+      enabled: True
+      tags: cpq
+      catalog: diggibyte
+      schema: silver
+      alias: t_quote_header_amount
+    columns:
+        - name: AverageGrossMarginPercent_Currency
+          data_type: string
+          nullable: true
+          tests:
+            - not_null
+            - accepted_values:
+                values: ['INR']
+        - name: AverageGrossMarginPercent_Value
+          data_type: string
+          nullable: true
+          tests:
+            - not_null
+        - name: AverageProductDiscountPercent_Currency
+          data_type: string
+          nullable: true
+          tests:
+            - not_null
+            - accepted_values:
+                values: [ 'INR' ]
+        - name: AverageProductDiscountPercent_Value
+          data_type: string
+          nullable: true
+          tests:
+            - not_null
+        - name: Cost_Currency
+          data_type: string
+          nullable: true
+          tests:
+            - not_null
+            - accepted_values:
+                values: [ 'INR' ]
+        - name: Cost_Value
+          data_type: string
+          nullable: true
+          tests:
+            - not_null
+        - name: TotalAmount_Currency
+          data_type: string
+          nullable: true
+          tests:
+            - not_null
+        - name: TotalAmount_Value
+          data_type: string
+          nullable: true
+          tests:
+            - not_null
+        - name: TotalListPrice_Currency
+          data_type: string
+          nullable: true
+          tests:
+            - not_null
+            - accepted_values:
+                values: [ 'INR' ]
+        - name: TotalListPrice_Value
+          data_type: string
+          nullable: true
+          tests:
+            - not_null
+        - name: TotalProductDiscountAmount_Currency
+          data_type: string
+          nullable: true
+          tests:
+            - not_null
+            - accepted_values:
+                values: [ 'INR' ]
+        - name: TotalProductDiscountAmount_Value
+          data_type: string
+          nullable: true
+          tests:
+            - not_null
+        - name: QuoteNumber
+          data_type: string
+          nullable: true
+          tests:
+            - not_null
+        - name: LOAD_DT
+          data_type: date
+          nullable: true
+        - name: EXECUTION_DT
+          data_type: date
+          nullable: true
+
+

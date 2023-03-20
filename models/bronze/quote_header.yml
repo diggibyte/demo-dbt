@@ -1,0 +1,26 @@
+# dbt_project.yml
+version: 2
+
+# Configuration for your sources
+sources:
+  - name: bronze_t_quote_header
+    schema: bronze
+    catalog: diggibyte
+    tables:
+      - name: t_quote_header
+        description: 'quote_header bronze data '
+        external:
+          using: json
+          refresh : false
+          options:
+            multiline: 'true'
+            path: 'abfss://cntdlt@stexapure.dfs.core.windows.net/bronze/cpq/quote_header/'
+
+
+
+
+
+
+
+
+

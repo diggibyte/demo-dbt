@@ -1,0 +1,163 @@
+version: 2
+
+models:
+  - name: silver_t_quote_header_involved_parties
+    docs:
+      show: true
+    config:
+      enabled: True
+      tags: cpq
+      catalog: diggibyte
+      schema: silver
+      alias: t_quote_header_involved_parties
+    columns:
+      - name: QuoteId
+        data_type: bigint
+        nullable: true
+      - name: QuoteNumber
+        data_type: string
+        nullable: true
+      - name: InvolvedParties_AdditionalStreetPrefixName
+        data_type: string
+        nullable: true
+      - name: InvolvedParties_AdditionalStreetSuffixName
+        data_type: string
+        nullable: true
+      - name: InvolvedParties_AddressAdditionalName
+        data_type: string
+        nullable: true
+      - name: InvolvedParties_AddressName
+        data_type: string
+        nullable: true
+      - name: InvolvedParties_AddressName3
+        data_type: string
+        nullable: true
+      - name: InvolvedParties_AddressName4
+        data_type: string
+        nullable: true
+      - name: InvolvedParties_BankAccount1
+        data_type: string
+        nullable: true
+      - name: InvolvedParties_BankAccount2
+        data_type: string
+        nullable: true
+      - name: InvolvedParties_BusinessPartnerId
+        data_type: string
+        nullable: true
+      - name: InvolvedParties_CityName
+        data_type: string
+        nullable: true
+      - name: InvolvedParties_CorrespondenceLanguage
+        data_type: string
+        nullable: true
+      - name: InvolvedParties_Country
+        data_type: string
+        nullable: true
+      - name: InvolvedParties_District
+        data_type: string
+        nullable: true
+      - name: InvolvedParties_EmailAddress
+        data_type: string
+        nullable: true
+      - name: InvolvedParties_ExternalId
+        data_type: string
+        nullable: true
+      - name: InvolvedParties_Fax
+        data_type: string
+        nullable: true
+      - name: InvolvedParties_FirstName
+        data_type: string
+        nullable: true
+      - name: InvolvedParties_FormOfAddress
+        data_type: string
+        nullable: true
+      - name: InvolvedParties_HouseNumber
+        data_type: string
+        nullable: true
+      - name: InvolvedParties_Id
+        data_type: bigint
+        nullable: true
+      - name: InvolvedParties_LastName
+        data_type: string
+        nullable: true
+      - name: InvolvedParties_MobilePhone
+        data_type: string
+        nullable: true
+      - name: InvolvedParties_Name
+        data_type: string
+        nullable: true
+      - name: InvolvedParties_POBox
+        data_type: string
+        nullable: true
+      - name: InvolvedParties_POBoxPostalCode
+        data_type: string
+        nullable: true
+      - name: InvolvedParties_PartnerFunctionId
+        data_type: bigint
+        nullable: true
+      - name: InvolvedParties_PartnerFunctionKey
+        data_type: string
+        nullable: true
+      - name: InvolvedParties_PartnerFunctionName
+        data_type: string
+        nullable: true
+      - name: InvolvedParties_PartnerId
+        data_type: string
+        nullable: true
+      - name: InvolvedParties_PartnerNumber
+        data_type: string
+        nullable: true
+      - name: InvolvedParties_Phone
+        data_type: string
+        nullable: true
+      - name: InvolvedParties_PostalCode
+        data_type: string
+        nullable: true
+      - name: InvolvedParties_PrimaryIndustry
+        data_type: string
+        nullable: true
+      - name: InvolvedParties_Region
+        data_type: string
+        nullable: true
+      - name: InvolvedParties_State
+        data_type: string
+        nullable: true
+      - name: InvolvedParties_StreetName
+        data_type: string
+        nullable: true
+      - name: InvolvedParties_StreetPrefixName
+        data_type: string
+        nullable: true
+      - name: InvolvedParties_StreetSuffixName
+        data_type: string
+        nullable: true
+      - name: InvolvedParties_SystemId
+        data_type: string
+        nullable: true
+      - name: InvolvedParties_TaxJurisdiction
+        data_type: string
+        nullable: true
+      - name: InvolvedParties_TaxNumber1
+        data_type: string
+        nullable: true
+      - name: InvolvedParties_TaxNumber2
+        data_type: string
+        nullable: true
+      - name: InvolvedParties_TimeZone
+        data_type: string
+        nullable: true
+      - name: InvolvedParties_TransportZone
+        data_type: string
+        nullable: true
+      - name: InvolvedParties_VATNumber
+        data_type: string
+        nullable: true
+      - name: LOAD_DT
+        data_type: date
+        nullable: true
+      - name: EXECUTION_DT
+        data_type: date
+        nullable: true
+
+
+

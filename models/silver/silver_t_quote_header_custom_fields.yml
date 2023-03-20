@@ -1,0 +1,192 @@
+version: 2
+
+models:
+  - name: silver_t_quote_header_custom_fields
+    docs:
+      show: true
+    config:
+      enabled: True
+      tags: cpq
+      catalog: diggibyte
+      schema: silver
+      alias: t_quote_header_custom_fields
+    columns:
+      - name: QuoteId
+        data_type: bigint
+        nullable: true
+      - name: Opportunity_Name
+        data_type: string
+        nullable: true
+      - name: Quote_Expiration_Date
+        data_type: string
+        nullable: true
+      - name: Customer_Comment
+        data_type: string
+        nullable: true
+      - name: MRCInUse
+        data_type: string
+        nullable: true
+      - name: Customer's_Language
+        data_type: string
+        nullable: true
+      - name: Quote_Number
+        data_type: string
+        nullable: true
+        tests:
+          - not_null
+      - name: ZCPQ_QT_PROJECTLOCATION
+        data_type: string
+        nullable: true
+      - name: ZCPQ_QT_PROJ_LOC_ADD
+        data_type: string
+        nullable: true
+      - name: ZCPQ_QT_CLOSE_DATE
+        data_type: string
+        nullable: true
+      - name: ZCPQ_QT_LIVING_UNITS
+        data_type: string
+        nullable: true
+      - name: ZCPQ_QT_MIX_COMMITMENT
+        data_type: string
+        nullable: true
+      - name: ZCPQ_QT_UPGRADE_COMMITMENT
+        data_type: string
+        nullable: true
+      - name: ZCPQ_QT_FIRST_ESTIMATEDSHIPTO
+        data_type: string
+        nullable: true
+      - name: ZCPQ_QT_LAST_ESTIMATEDSHIPTO
+        data_type: string
+        nullable: true
+      - name: ZCPQ_QT_SALES_STAGE
+        data_type: string
+        nullable: true
+      - name: ZCPQ_QT_FINISH_BLEND_MARGIN
+        data_type: string
+        nullable: true
+      - name: ZCPQ_QT_SERV_BLEND_MARGIN
+        data_type: string
+        nullable: true
+      - name: ZCPQ_QT_OVERALL_BLEND_MARGIN
+        data_type: string
+        nullable: true
+      - name: ZCPQ_QT_ORIGIN
+        data_type: string
+        nullable: true
+      - name: ZCPQ_QT_REF_OPPERTUNITY
+        data_type: string
+        nullable: true
+      - name: ZCPQ_QT_Service_Level
+        data_type: string
+        nullable: true
+      - name: Account_ID
+        data_type: string
+        nullable: true
+      - name: RequestedDate
+        data_type: string
+        nullable: true
+      - name: ZCPQ_QT_QUOTE_TYPE
+        data_type: string
+        nullable: true
+      - name: ZCPQ_QT_PRIORITY
+        data_type: string
+        nullable: true
+      - name: ZCPQ_QT_REASON
+        data_type: string
+        nullable: true
+      - name: ZCPQ_QT_TAXEXEMPT
+        data_type: string
+        nullable: true
+      - name: ZCPQ_QT_SHP_FREQUENCY
+        data_type: string
+        nullable: true
+      - name: ZCPQ_QT_OPPERTUNITYGROUP
+        data_type: string
+        nullable: true
+      - name: ZCS_CPQ_QU_hidden_cust_fld
+        data_type: string
+        nullable: true
+      - name: SCRIPT_FLAG
+        data_type: string
+        nullable: true
+      - name: ZCPQ_QT_INVENTORY_TYPE
+        data_type: string
+        nullable: true
+      - name: ZCS_CF_ExcelUpload
+        data_type: string
+        nullable: true
+      - name: ZCPQ_QT_OWNERSHIP_BLEND_MARGIN
+        data_type: string
+        nullable: true
+      - name: ZCPQ_QT_SECONDARY_STATUS
+        data_type: string
+        nullable: true
+      - name: ZCPQ_QT_SENT_TO_CUSTOMER
+        data_type: string
+        nullable: true
+      - name: Approval_to
+        data_type: string
+        nullable: true
+      - name: ZCS_CF_MULTIYEAR
+        data_type: string
+        nullable: true
+      - name: ZCS_CF_UPLIFT
+        data_type: string
+        nullable: true
+      - name: ZCS_CF_SELECTEDITMS
+        data_type: string
+        nullable: true
+      - name: ZCPQ_QT_ReferenceQuote
+        data_type: string
+        nullable: true
+      - name: ZCPQ_QT_Description
+        data_type: string
+        nullable: true
+      - name: ZCPQ_QT_COPY_LINE_ITEMS
+        data_type: string
+        nullable: true
+      - name: ZCPQ_QT_ChangeQuote
+        data_type: string
+        nullable: true
+      - name: ZCPQ_QT_ACCEPTED_DATE
+        data_type: string
+        nullable: true
+      - name: Mul_Yr_Default_Uplift
+        data_type: string
+        nullable: true
+      - name: ZCPQ_QT_NUMBER_OF_DAYS
+        data_type: string
+        nullable: true
+      - name: ZCPQ_QT_30_Days_Ind
+        data_type: string
+        nullable: true
+      - name: Project_Name
+        data_type: string
+        nullable: true
+      - name: Additional_Comments
+        data_type: string
+        nullable: true
+      - name: Terms
+        data_type: string
+        nullable: true
+      - name: PO_Number
+        data_type: string
+        nullable: true
+      - name: Customer_Quote_Reference
+        data_type: string
+        nullable: true
+      - name: Invoice_Number
+        data_type: string
+        nullable: true
+      - name: Tracking_Number
+        data_type: string
+        nullable: true
+      - name: LOAD_DT
+        data_type: date
+        nullable: true
+      - name: EXECUTION_DT
+        data_type: date
+        nullable: true
+
+
+

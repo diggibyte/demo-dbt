@@ -1,0 +1,58 @@
+version: 2
+
+models:
+  - name: gold_t_quote_header_status_history_fact
+    docs:
+      show: true
+    config:
+      enabled: True
+      tags: cpq
+      catalog: diggibyte
+      schema: gold
+      alias: t_quote_header_status_history_fact
+    columns:
+        - name: QUOTE_NO
+          data_type: string
+          nullable: true
+        - name: QUOTE_ID
+          data_type: bigint
+          nullable: true
+        - name: STATUS_ID
+          data_type: bigint
+          nullable: true
+        - name: STATUS_NM
+          data_type: string
+          nullable: true
+        - name: OPPORTUNITY_ID
+          data_type: string
+          nullable: true
+        - name: OPPORTUNITY_NM
+          data_type: string
+          nullable: true
+        - name: CREATED_DT
+          data_type: date
+          nullable: true
+        - name: LAST_UPDATED_DT
+          data_type: date
+          nullable: true
+        - name: EFFECTIVE_DT
+          data_type: date
+          nullable: true
+        - name: LOAD_DT
+          data_type: date
+          nullable: true
+        - name: EXECUTION_DT
+          data_type: date
+          nullable: true
+        - name: EFFECTIVE_START_DT
+          data_type: date
+          nullable: true
+        - name: EFFECTIVE_END_DT
+          data_type: string
+          nullable: true
+        - name: STATUS_ACTIVE_IND
+          data_type: boolean
+          nullable: true
+
+
+

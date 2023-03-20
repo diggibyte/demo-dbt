@@ -1,0 +1,16 @@
+version: 2
+
+models:
+  - name: gold_t_quote_header_fact
+    docs:
+      show: true
+    config:
+      enabled: True
+      tags: cpq
+      catalog: diggibyte
+      schema: gold
+      alias: t_quote_header_fact
+
+
+
+
