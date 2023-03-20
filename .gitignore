@@ -1,0 +1,7 @@
+target/
+dbt_packages/
+logs/
+backup/
+dbt_databricks/
+profiles/*
+codegen/
