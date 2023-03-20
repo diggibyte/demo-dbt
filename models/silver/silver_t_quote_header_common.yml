@@ -8,7 +8,7 @@ models:
         enabled: True
         tags: cpq
         schema: silver
-        catalog: diggibyte
+        catalog: demo
         alias: t_quote_header_common
     columns:
         - name: CurrencyCode

@@ -5,7 +5,7 @@ version: 2
 sources:
   - name: bronze_t_quote_header
     schema: bronze
-    catalog: diggibyte
+    catalog: demo
     tables:
       - name: t_quote_header
         description: 'quote_header bronze data '
