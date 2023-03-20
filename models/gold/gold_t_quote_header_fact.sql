@@ -3,7 +3,7 @@ config(
 file_format='delta',
 materialized='incremental',
 incremental_strategy='merge',
-location_root='abfss://cntdlt@stexapure.dfs.core.windows.net/source/gold/')
+location_root='abfss://cntdlt@stexapure.dfs.core.windows.net/'~var('DBT_WSENV')~'source/gold/')
 }}
 
 {% set col_to_select = [ "Ship-to party",

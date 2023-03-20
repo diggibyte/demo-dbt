@@ -5,7 +5,7 @@ partition_by=['ing_day'],
 materialized='incremental',
 incremental_strategy='merge',
 unique_key=['QuoteNumber'],
-location_root='abfss://cntdlt@stexapure.dfs.core.windows.net/source/silver/')
+location_root='abfss://cntdlt@stexapure.dfs.core.windows.net/'~var('DBT_WSENV')~'/source/silver/')
 }}
 
 WITH tgt AS (

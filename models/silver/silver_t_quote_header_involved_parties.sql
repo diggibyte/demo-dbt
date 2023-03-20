@@ -5,7 +5,7 @@ partition_by=['ing_day'],
 materialized='incremental',
 incremental_strategy='merge',
 unique_key=['QuoteId','QuoteNumber'],
-location_root='abfss://cntdlt@stexapure.dfs.core.windows.net/source/silver/')
+location_root='abfss://cntdlt@stexapure.dfs.core.windows.net/'~var('DBT_WSENV')~'source/silver/')
 }}
 
 {% set col_to_select_and_rename = [ "AdditionalStreetPrefixName", "AdditionalStreetSuffixName", "AddressAdditionalName", "AddressName", "AddressName3", "AddressName4", "BankAccount1", "BankAccount2", "BusinessPartnerId", "CityName", "CorrespondenceLanguage", "Country", "District", "EmailAddress", "ExternalId", "Fax", "FirstName", "FormOfAddress", "HouseNumber", "Id", "LastName", "MobilePhone", "Name", "POBox", "POBoxPostalCode", "PartnerFunctionId", "PartnerFunctionKey", "PartnerFunctionName", "PartnerId", "PartnerNumber", "Phone", "PostalCode", "PrimaryIndustry", "Region", "State", "StreetName", "StreetPrefixName", "StreetSuffixName", "SystemId", "TaxJurisdiction", "TaxNumber1", "TaxNumber2", "TimeZone", "TransportZone", "VATNumber"] %}

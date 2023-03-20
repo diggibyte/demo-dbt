@@ -7,7 +7,7 @@ models:
     config:
       enabled: True
       tags: cpq
-      catalog: diggibyte
+      catalog: demo
       schema: silver
       alias: t_quote_header_custom_fields
     columns:

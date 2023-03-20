@@ -7,7 +7,7 @@ models:
     config:
       enabled: True
       tags: cpq
-      catalog: diggibyte
+      catalog: demo
       schema: gold
       alias: t_quote_header_fact
 
