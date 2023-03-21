@@ -15,11 +15,11 @@ WITH temp AS (
   select QuoteId, QuoteNumber, ing_day, ips.*
   from {{ source('bronze_t_quote_header', 't_quote_header')}}
   LATERAL VIEW explode(InvolvedParties) ip as ips
-  where ing_day={{ var('ing_date') }}
+  where ing_day={{ var('DBT_ING_DATE')  }}
 )
 SELECT QuoteId, QuoteNumber,ing_day,
  {{ select_columns_and_append_reename(col_to_select_and_rename,rename_val) }},
-TO_DATE(CAST(UNIX_TIMESTAMP( cast({{ var('ing_date') }} AS STRING) , 'yyyyMMdd') AS TIMESTAMP)) as LOAD_DT,
+TO_DATE(CAST(UNIX_TIMESTAMP( cast({{ var('DBT_ING_DATE')  }} AS STRING) , 'yyyyMMdd') AS TIMESTAMP)) as LOAD_DT,
 current_date() as EXECUTION_DT
 FROM temp;
 

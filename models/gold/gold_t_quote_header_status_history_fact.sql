@@ -23,7 +23,7 @@ DateModified as EFFECTIVE_START_DT,
 "9999-12-31" as EFFECTIVE_END_DT,
 true as STATUS_ACTIVE_IND
 FROM  {{ ref('silver_t_quote_header_common')}}
-where ing_day={{ var('ing_date') }}
+where ing_day={{ var('DBT_ING_DATE')  }}
 
 
 

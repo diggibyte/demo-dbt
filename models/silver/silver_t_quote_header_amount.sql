@@ -25,10 +25,10 @@ SELECT AverageGrossMarginPercent.Currency AS AverageGrossMarginPercent_Currency,
        QuoteNumber
 FROM  {{ source('bronze_t_quote_header', 't_quote_header')}}
 
-where ing_day={{ var('ing_date') }}
+where ing_day={{  var('DBT_ING_DATE') }}
 )
 select * ,
-TO_DATE(CAST(UNIX_TIMESTAMP( cast({{ var('ing_date') }} AS STRING) , 'yyyyMMdd') AS TIMESTAMP)) as LOAD_DT,
+TO_DATE(CAST(UNIX_TIMESTAMP( cast({{ var('DBT_ING_DATE') }} AS STRING) , 'yyyyMMdd') AS TIMESTAMP)) as LOAD_DT,
 current_date() as EXECUTION_DT
 from tgt where
          AverageGrossMarginPercent_Currency ='INR'
