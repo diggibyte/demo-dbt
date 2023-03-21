@@ -20,7 +20,7 @@ with qoute_header  as (
 select
 {{ dbt_utils.star(from=ref('silver_t_quote_header_common'), except=["QuoteTables"]) }}
 FROM  {{ ref('silver_t_quote_header_common')}}
-where ing_day={{ var('ing_date') }}
+where ing_day={{ var('DBT_ING_DATE')  }}
 
 )
 , invol_party  as (
@@ -29,7 +29,7 @@ QuoteId,
 QuoteNumber,
  {{ involved_party_rename(col_to_select) }}
 FROM  {{ ref('silver_t_quote_header_involved_parties')}}
-where ing_day={{ var('ing_date') }}
+where ing_day={{ var('DBT_ING_DATE') }}
 group by
 QuoteId, QuoteNumber
 )
