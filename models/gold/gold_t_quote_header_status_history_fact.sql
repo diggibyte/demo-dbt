@@ -3,7 +3,7 @@ config(
 file_format='delta',
 materialized='incremental',
 incremental_strategy='merge',
-location_root='abfss://cntdlt@stexapure.dfs.core.windows.net/'~var('DBT_WSENV')~'source/gold/')
+location_root="abfss://cntdlt@stexapure.dfs.core.windows.net/'{{ env_var('DBT_WSENV') }}'/source/gold/")
 }}
 
 
@@ -23,7 +23,7 @@ DateModified as EFFECTIVE_START_DT,
 "9999-12-31" as EFFECTIVE_END_DT,
 true as STATUS_ACTIVE_IND
 FROM  {{ ref('silver_t_quote_header_common')}}
-where ing_day={{ var('ing_date') }}
+where ing_day={{ env_var('DBT_WSENV') }}
 
 
 

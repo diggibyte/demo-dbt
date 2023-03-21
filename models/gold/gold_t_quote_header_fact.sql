@@ -3,7 +3,7 @@ config(
 file_format='delta',
 materialized='incremental',
 incremental_strategy='merge',
-location_root='abfss://cntdlt@stexapure.dfs.core.windows.net/'~var('DBT_WSENV')~'source/gold/')
+location_root="abfss://cntdlt@stexapure.dfs.core.windows.net/'{{ env_var('DBT_WSENV') }}'/source/gold/")
 }}
 
 {% set col_to_select = [ "Ship-to party",
@@ -20,7 +20,7 @@ with qoute_header  as (
 select
 {{ dbt_utils.star(from=ref('silver_t_quote_header_common'), except=["QuoteTables"]) }}
 FROM  {{ ref('silver_t_quote_header_common')}}
-where ing_day={{ var('ing_date') }}
+where ing_day={{ env_var('DBT_ING_DATE') }}
 
 )
 , invol_party  as (
@@ -29,7 +29,7 @@ QuoteId,
 QuoteNumber,
  {{ involved_party_rename(col_to_select) }}
 FROM  {{ ref('silver_t_quote_header_involved_parties')}}
-where ing_day={{ var('ing_date') }}
+where ing_day={{ env_var('DBT_ING_DATE') }}
 group by
 QuoteId, QuoteNumber
 )

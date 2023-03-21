@@ -5,7 +5,7 @@ partition_by=['ing_day'],
 materialized='incremental',
 incremental_strategy='merge',
 unique_key=['QuoteId','Quote_Number'],
-location_root='abfss://cntdlt@stexapure.dfs.core.windows.net/'~var('DBT_WSENV')~'source/silver/')
+location_root="abfss://cntdlt@stexapure.dfs.core.windows.net/'{{ env_var('DBT_WSENV') }}'/source/silver/")
 }}
 
 {% set col_to_pivot = [  "Opportunity Name",
@@ -75,7 +75,7 @@ WITH temp AS (
  ing_day
   from {{ source('bronze_t_quote_header', 't_quote_header')}}
  LATERAL VIEW explode(CustomFields) cf as Custm_fields
-  where ing_day={{ var('ing_date') }}
+  where ing_day={{ env_var('DBT_ING_DATE') }}
 )
  SELECT QuoteId,ing_day,
   {{ pivot_cols_with_rename(col_to_pivot) }}
@@ -84,7 +84,7 @@ group by
 QuoteId,ing_day
 )
 select *,
-TO_DATE(CAST(UNIX_TIMESTAMP( cast({{ var('ing_date') }} AS STRING) , 'yyyyMMdd') AS TIMESTAMP)) as LOAD_DT,
+TO_DATE(CAST(UNIX_TIMESTAMP( cast({{ env_var('DBT_ING_DATE') }} AS STRING) , 'yyyyMMdd') AS TIMESTAMP)) as LOAD_DT,
 current_date() as EXECUTION_DT
 from upper
 

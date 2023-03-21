@@ -5,7 +5,7 @@ partition_by=['ing_day'],
 materialized='incremental',
 incremental_strategy='merge',
 unique_key=['QuoteId','QuoteNumber'],
-location_root='abfss://cntdlt@stexapure.dfs.core.windows.net/'~var('DBT_WSENV')~'source/silver/')
+location_root="abfss://cntdlt@stexapure.dfs.core.windows.net/'{{ env_var('DBT_WSENV') }}'/source/silver/")
 }}
 
 
@@ -37,7 +37,7 @@ location_root='abfss://cntdlt@stexapure.dfs.core.windows.net/'~var('DBT_WSENV')~
 WITH tgt AS (
   SELECT {{ select_columns(col_to_select) }}
   from {{ source('bronze_t_quote_header', 't_quote_header')}}
-  where ing_day={{ var('ing_date') }}
+  where ing_day={{ env_var('DBT_ING_DATE') }}
   and not(QuoteId is null or
           QuoteNumber is null or
           IsPrimary is null or
@@ -45,7 +45,7 @@ WITH tgt AS (
    and CurrencyCode = 'INR'
 )
 SELECT *,
-TO_DATE(CAST(UNIX_TIMESTAMP( cast({{ var('ing_date') }} AS STRING) , 'yyyyMMdd') AS TIMESTAMP)) as LOAD_DT,
+TO_DATE(CAST(UNIX_TIMESTAMP( cast({{ env_var('DBT_ING_DATE') }} AS STRING) , 'yyyyMMdd') AS TIMESTAMP)) as LOAD_DT,
 current_date() as EXECUTION_DT
 FROM tgt;
 

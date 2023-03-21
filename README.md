@@ -30,6 +30,8 @@ source dbt_databricks/bin/activate
 
 pip install -r requirements.txt
 export DBT_TOKEN="XXXXXXXXXXXXXX-XX"
+export DBT_ING_DATE = 20230212 
+export DBT_WSENV = test 
 
 #install dependency package 
 dbt deps 

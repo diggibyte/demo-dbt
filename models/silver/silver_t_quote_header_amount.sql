@@ -5,7 +5,7 @@ partition_by=['ing_day'],
 materialized='incremental',
 incremental_strategy='merge',
 unique_key=['QuoteNumber'],
-location_root='abfss://cntdlt@stexapure.dfs.core.windows.net/'~var('DBT_WSENV')~'/source/silver/')
+location_root="abfss://cntdlt@stexapure.dfs.core.windows.net/'{{ env_var('DBT_WSENV') }}'/source/silver/")
 }}
 
 WITH tgt AS (
@@ -25,10 +25,10 @@ SELECT AverageGrossMarginPercent.Currency AS AverageGrossMarginPercent_Currency,
        QuoteNumber
 FROM  {{ source('bronze_t_quote_header', 't_quote_header')}}
 
-where ing_day={{ var('ing_date') }}
+where ing_day={{ env_var('DBT_ING_DATE') }}
 )
 select * ,
-TO_DATE(CAST(UNIX_TIMESTAMP( cast({{ var('ing_date') }} AS STRING) , 'yyyyMMdd') AS TIMESTAMP)) as LOAD_DT,
+TO_DATE(CAST(UNIX_TIMESTAMP( cast({{ env_var('DBT_ING_DATE') }} AS STRING) , 'yyyyMMdd') AS TIMESTAMP)) as LOAD_DT,
 current_date() as EXECUTION_DT
 from tgt where
          AverageGrossMarginPercent_Currency ='INR'
